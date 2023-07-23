@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902504952463",
+    "project_id": "batball-c44c9",
+    "storage_bucket": "batball-c44c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902504952463:android:606d4c6c40f9f7f0a976fa",
+        "android_client_info": {
+          "package_name": "com.batball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902504952463-etj3eauvgtetpdt6ijdmku40l7utjsgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj9HXCLPV55MtsAzNbz4cMTVvN8lVCDos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902504952463-etj3eauvgtetpdt6ijdmku40l7utjsgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
