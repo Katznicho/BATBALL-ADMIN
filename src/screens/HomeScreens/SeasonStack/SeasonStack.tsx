@@ -15,11 +15,15 @@ import EditPlayer from './EditPlayer';
 import EditClub from './EditClub';
 import Players from './Players';
 import PlayerDetails from './PlayerDetails';
+import FixtureStack from './FixtureStack/FixtureStack';
+import { useRoute } from '@react-navigation/native';
 
 
 const Stack = createStackNavigator();
 
 const SeasonStack = () => {
+
+
     return (
         <Stack.Navigator
             initialRouteName='SeasonsScreen'
@@ -318,10 +322,11 @@ const SeasonStack = () => {
 
             <Stack.Screen
                 name="FixtureDetailsScreen"
-                component={FixtureDetails}
+                component={FixtureStack}
                 options={{
                     headerShown: false
                 }}
+
             />
 
             {/* fixtures */}

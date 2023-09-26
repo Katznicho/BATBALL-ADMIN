@@ -8,25 +8,11 @@ import { theme } from '../../../theme/theme';
 import { ActivityIndicator, Button, IconButton } from 'react-native-paper';
 import { formatDate } from '../../../utils/Helpers';
 import { TabView, SceneMap } from 'react-native-tab-view';
+import FixtureStack from './FixtureStack/FixtureStack';
 
 
 
-const FirstRoute = () => (
-  <View >
-    <Text style={{ color: "black" }}>First</Text>
-  </View>
-);
 
-const SecondRoute = () => (
-  <View style={{  backgroundColor: 'red' }} >
-    <Text style={{ color: "black" }}>Second</Text>
-  </View>
-);
-
-const renderScene = SceneMap({
-  first: FirstRoute,
-  second: SecondRoute,
-});
 
 
 
@@ -44,8 +30,8 @@ const FixtureDetails = ({ navigation }: any) => {
       const awayTeamId = fixture.data()?.awayTeam;
       const details = {
         ...fixtureData,
-        homeTeamDetails: (await firestore().collection(CLUBS).doc(homeTeamId).get()).data(),
-        awayTeamDetails: (await firestore().collection(CLUBS).doc(awayTeamId).get()).data(),
+        homeTeamDetails: (await firestore().collection(SEASONS).doc(seasonId).collection(CLUBS).doc(homeTeamId).get()).data(),
+        awayTeamDetails: (await firestore().collection(SEASONS).doc(seasonId).collection(CLUBS).doc(awayTeamId).get()).data(),
       };
 
       setFixtureDetails([details]);
@@ -60,14 +46,7 @@ const FixtureDetails = ({ navigation }: any) => {
   }, []);
 
 
-  const layout = useWindowDimensions();
 
-  const [index, setIndex] = React.useState(0);
-
-  const [routes] = React.useState([
-    { key: 'first', title: 'First' },
-    { key: 'second', title: 'Second' },
-  ])
 
 
 
@@ -180,13 +159,8 @@ const FixtureDetails = ({ navigation }: any) => {
 
               {/* tabs */}
 
-              <TabView
-                navigationState={{ index, routes }}
-                renderScene={renderScene}
-                onIndexChange={setIndex}
-                initialLayout={{ width: layout.width }}
-              />
-
+                 
+                  <FixtureStack/>
               {/* tabs */}
 
             </View>

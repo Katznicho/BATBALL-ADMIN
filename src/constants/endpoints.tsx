@@ -45,6 +45,7 @@ export const SEASON_FIXTURES: string = "season_fixtures";
 export const VIDEOS = "videos";
 export const EXCEPTIONAL_PLAYS = "exceptional_plays";
 export const GALLERIES = "galleries";
+export const LINEUPS = "lineups";
 
 //firebase storage
 export const PROFILE_STORAGE:string  = "profile/images"

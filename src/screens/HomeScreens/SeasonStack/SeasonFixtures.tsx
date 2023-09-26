@@ -38,8 +38,8 @@ const SeasonFixtures = ({ navigation }: any) => {
         const details = {
           ...FixtureData,
           fixtureId: fixture.id,
-          homeTeamDetails: (await firestore().collection(CLUBS).doc(homeTeamId).get()).data(),
-          awayTeamDetails: (await firestore().collection(CLUBS).doc(awayTeamId).get()).data(),
+          homeTeamDetails: (await firestore().collection(SEASONS).doc(seasonId).collection(CLUBS).doc(homeTeamId).get()).data(),
+          awayTeamDetails: (await firestore().collection(SEASONS).doc(seasonId).collection(CLUBS).doc(awayTeamId).get()).data(),
         };
         setSeasonFixtures((prevState: any) => [...prevState, details]);
         // updatedFixture.push(details);
